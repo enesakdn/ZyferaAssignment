@@ -8,5 +8,4 @@ import java.util.List;
 
 @Repository
 public interface GradeRepository extends JpaRepository<Grade, Long> {
-    List<Grade> findByCode(String code);
 }

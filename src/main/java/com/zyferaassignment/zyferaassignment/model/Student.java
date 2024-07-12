@@ -3,7 +3,7 @@ package com.zyferaassignment.zyferaassignment.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import java.util.List;
 @Data
 @NoArgsConstructor
 @Entity
@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int  Id;
+    private int  id;
     private String name;
     private String stdNumber;
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
-    private Grade grade;
+    private List<Grade> grades;
 }

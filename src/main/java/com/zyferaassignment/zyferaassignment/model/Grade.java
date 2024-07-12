@@ -12,11 +12,18 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "grades")
 public class Grade {
-private int Id;
+private int id;
 private String code;
 private int value;
 
 @ManyToOne
 @JoinColumn(name = "student_id")
 private Student student;
+
+    public Grade(String code, int value, Student student) {
+        this.code = code;
+        this.value = value;
+        this.student = student;
+    };
+
 }

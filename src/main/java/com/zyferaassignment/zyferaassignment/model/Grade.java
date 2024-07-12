@@ -1,9 +1,6 @@
 package com.zyferaassignment.zyferaassignment.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,10 +9,11 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "grades")
 public class Grade {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int id;
 private String code;
 private int value;
-
 @ManyToOne
 @JoinColumn(name = "student_id")
 private Student student;
@@ -25,5 +23,4 @@ private Student student;
         this.value = value;
         this.student = student;
     };
-
 }
